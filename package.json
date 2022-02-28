@@ -1,0 +1,16 @@
+{
+  "name": "send-on",
+  "version": "1.0.0",
+  "description": "A MERN stack chat application with plenty of features",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "author": "Tasin Chowdhury",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
