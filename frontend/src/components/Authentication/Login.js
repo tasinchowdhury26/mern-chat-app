@@ -38,56 +38,19 @@ const Login = () => {
 
     console.log(email, password);
     try {
-      // const config = {
-      //   headers: {
-      //     "Content-type": "application/json",
-      //   },
-      // };
-      // const { data } = await axios.post(
-      //   "/api/user/login",
-      //   {
-      //     email,
-      //     password,
-      //   },
-      //   config
-      // );
-
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "/api/user/login",
         {
-          name: "randomName",
           email,
           password,
-          pic: "thisIsAURL",
         },
         config
       );
-
-      // let data;
-      // fetch(`http://localhost:5000/api/user/login`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     email,
-      //     password,
-      //   }),
-      // })
-      //   .then((res) => {
-      //     console.log(res, "line 66");
-      //     res.json();
-      //   })
-      //   .then((d) => {
-      //     data = d;
-      //     console.log(data);
-      //   })
-      //   .catch((error) => console.log(error));
 
       console.log(JSON.stringify(data), data);
       toast({

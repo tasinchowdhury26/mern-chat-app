@@ -8,10 +8,9 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  toast,
-  useToast,
   VStack,
 } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/toast";
 
 const SignUp = () => {
   const [name, setName] = useState();
@@ -22,6 +21,7 @@ const SignUp = () => {
   const [pic, setPic] = useState();
   const [loading, setLoading] = useState(false);
   const history = useHistory();
+  const toast = useToast();
 
   const handleClick = () => setShow(!show);
   const postDetails = (pics) => {
