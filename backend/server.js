@@ -4,6 +4,7 @@ const { chats } = require("./data/data");
 const connectDB = require("./config/db");
 const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
+const cors = require("cors");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 const app = express();
