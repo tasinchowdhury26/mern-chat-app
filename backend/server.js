@@ -9,6 +9,7 @@ const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 const app = express();
 dotenv.config();
+app.use(cors);
 connectDB();
 
 const PORT = process.env.PORT || 5000;

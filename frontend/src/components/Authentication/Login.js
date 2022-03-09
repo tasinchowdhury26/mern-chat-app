@@ -38,19 +38,58 @@ const Login = () => {
 
     console.log(email, password);
     try {
+      // const config = {
+      //   headers: {
+      //     "Content-type": "application/json",
+      //   },
+      // };
+      // const { data } = await axios.post(
+      //   "/api/user/login",
+      //   {
+      //     email,
+      //     password,
+      //   },
+      //   config
+      // );
+
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
-      console.log(email, password, config);
       const { data } = await axios.post(
-        "/api/user/login",
-        { email, password },
+        "/api/user",
+        {
+          name: "randomName",
+          email,
+          password,
+          pic: "thisIsAURL",
+        },
         config
       );
 
-      console.log(JSON.stringify(data));
+      // let data;
+      // fetch(`http://localhost:5000/api/user/login`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     email,
+      //     password,
+      //   }),
+      // })
+      //   .then((res) => {
+      //     console.log(res, "line 66");
+      //     res.json();
+      //   })
+      //   .then((d) => {
+      //     data = d;
+      //     console.log(data);
+      //   })
+      //   .catch((error) => console.log(error));
+
+      console.log(JSON.stringify(data), data);
       toast({
         title: "Login Successful",
         status: "success",
@@ -64,7 +103,7 @@ const Login = () => {
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: error.response.data.message,
+        description: error?.response?.data?.message || "error",
         status: "error",
         duration: 5000,
         isClosable: true,
