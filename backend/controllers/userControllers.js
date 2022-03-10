@@ -53,4 +53,12 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser };
+const allUsers = asyncHandler(async (req, res) => {
+  //instead of using the POST, we're using GET in useRoutes
+  //this is why we're doing this with the query
+  const keyword = req.query;
+
+  console.log(keyword);
+});
+
+module.exports = { registerUser, authUser, allUsers };
